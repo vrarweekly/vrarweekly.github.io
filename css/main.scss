@@ -1,0 +1,227 @@
+/*font*/
+@import url(http://nicholastodor.com/sf/usesf.css);
+
+/*colors*/
+$primary-color: #455A64;
+
+/*mixins*/
+@mixin font-opacity($color, $opacity) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
+
+@mixin background-opacity($color, $opacity) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity);
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'San Francisco Display', sans-serif;
+}
+
+p, a, li, ul, button, label, input, span {
+	font-family: 'San Francisco Text', sans-serif;
+	color: rgba(black, .87);
+	line-height: 150%;
+}
+
+.header {
+	@include font-opacity(white, 0.87);
+	background-color: white;
+	margin: none;
+}
+
+.nav {
+	padding-top: 1em;
+	padding-bottom: 1em;
+/*	@include background-opacity(white, 0.2);
+	border-bottom: solid 2px rgba(black, 0.2);*/
+}
+
+.nav li {
+	display: inline-block;
+	margin: 0em .5em 0em .5em;
+	font-weight: 100;
+}
+
+.hero {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	/*border-bottom: solid 2px rgba(black, 0.2);*/
+}
+
+.hero h1 {
+	margin-top: 1em;
+	margin-bottom: .5em;
+	color: $primary-color;
+	font-size: 3rem;
+	font-weight: 900;
+}
+
+.hero p {
+	text-align: left;
+	font-size: 1rem;
+	margin-bottom: 1em;
+	color: rgba(black, .87);
+}
+
+.hero-button {
+	text-transform: uppercase;
+	border: solid 1px white;
+	padding: .5em;
+	margin: 1em 1em 0.5em 1em;
+	margin: 0 auto;
+	max-width: 10em;
+}
+
+.hero-button:hover {
+	@include background-opacity(white, 0.2);
+	color: $primary-color;
+	cursor: pointer;
+}
+
+input .email, input .button {
+	display: inline-block;
+}
+
+input .email {
+	width: 500px !important;
+}
+
+input {
+	font-size: 1rem;
+	padding: 1em;
+}
+
+input[submit] {
+	background-color: rgba(white, .87);
+	border: none;
+	border: solid 1px rgba(white, .87) !important;
+	color: $primary-color !important;
+}
+
+#mc_embed_signup {
+	font: inherit;
+	padding: 2rem;
+	background-color: $primary-color;
+}
+
+#mc_embed_signup p{
+	margin: 0.5rem 0 0 0;
+	text-align: center;
+	color: rgba(white, .87);
+}
+
+.industry-inner {
+	text-align: left;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.hero h2 {
+	font-size: 1.2rem;
+	color: rgba(black, .87);
+	text-align: left;
+}
+
+.industry {
+	display: inline-block;
+	text-align: left;
+	padding-bottom: 1em;
+	@include font-opacity(black, 0.87);
+}
+
+.industry img {
+	display: inline-block;
+	width: 2rem;
+	vertical-align: middle;
+}
+
+.industry span {
+	font-size: 1rem;
+	margin-left: 2rem;
+	vertical-align: top;
+	margin-top: none;
+	margin-bottom: none;
+}
+
+h2 {
+	font-size: 2em;
+	padding-top: 1em;
+}
+
+.deal-outer h2 {
+	color: rgba(black, 0.87);
+}
+
+.deal-outer {
+	margin: 0 1em 0 1em;
+}
+
+.deal-wrapper {
+	padding: 2em;
+	width: auto !important;
+}
+
+.deal {
+	border: solid 1px rgba(black, 0.4);
+	border-radius: 5px;	
+}
+
+.company, .terms, .get {
+	padding: 1em;
+}
+
+.get a {
+	text-decoration: none;
+}
+
+.company, .get {
+	background-color: rgba(black, 0.05);
+}
+
+.terms {
+	background-color: rgba(black, 0.01);
+	border-top: solid 1px rgba(black, 0.4);
+	border-bottom: solid 1px rgba(black, 0.4);
+	font-size: 1.5em;
+}
+
+.button {
+	background-color: rgba(white, .87);
+	border: solid 1px rgba(white, .87);
+	color: $primary-color;
+}
+
+.button:hover {
+	background-color: white;
+	border: solid 1px rgba(white, .87);
+	color: $primary-color;
+}
+
+.deal-button {
+	border: solid 1px $primary-color;
+	color: $primary-color;
+	padding: .51em;
+	margin: 0 25% 0 25%;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+.deal-button:hover {
+	background-color: white;
+}
+
+.logo {
+	height: 1em;
+}
