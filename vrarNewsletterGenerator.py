@@ -9,16 +9,18 @@ import codecs
 # config
 ## name
 newsletter_name = "VR/AR Weekly"
+url = "http://www.vrarweekly.com" # include http://
 ## colors
 primary_color =  "#455A64" # header, labels
 secondary_color = "#303F9F" # links
 support_color = "#607D8B"# domains 
 ## categories
 categories = [
-["StarVR", ["StarVR"]],
 ["Oculus", ["Oculus", "Palmer", "Rift"]],
-["Google", ["Google", "YouTube", "Cardboard", "Android", "Android"]],
 ["Valve", ["Valve", "Steam", "Vive", "HTC", "Lighthouse"]],
+["Sony", ["Sony", "Morpheus"]],
+["StarVR", ["StarVR"]],
+["Google", ["Google", "YouTube", "Cardboard", "Android", "Android"]],
 ["Microsoft", ["Microsoft", "Xbox", "Minecraft", "Hololens"]]
 ] # Leave empty if you don't want categories. If you have categories, add them to the list in the following format: [name of category, [flair tag 1, flair tag 2, flair tag3, ...]]. It will search each flair tag and if there's a match, assign it to the category.
 category_search_method = "title" # choose title or flair depending
@@ -67,13 +69,12 @@ def newsletter(issue, date):
 <tr><td bgcolor="#f4f4f4" style="font-family: verdana, helvetica, arial, sans-serif; text-align: left; padding-top: 12px; padding-left: 12px; padding-right: 12px; padding-bottom: 12px" class="noarchive">
 	<p style="line-height: 15px; font-size: 11px; margin-top: 0">A side project of <a target="_blank" href="http://twitter.com/tonysheng" style="color: #0088cc">@tonysheng</a>.
 	<p style="font-size: 11px; line-height: 15px">VR/AR Weekly, 301 King Street, San Francisco, CA 94158</p>
-	<p style="font-size: 11px; line-height: 15px">Forwarded this email? Subscribe to the newsletter here.</p>
+	<p style="font-size: 11px; line-height: 15px">Forwarded this email? Subscribe to the newsletter <a target="_blank" href="http://www.vrarweekly.com" style="color: #0088cc">here.</a></p>
 </td></tr>
 </table>
 </td></tr></table></div>
 </body>
 </html>
-
 """
 	email_html = email_html.replace("{{issue}}", issue)
 	email_html = email_html.replace("{{date}}", date)
@@ -82,6 +83,7 @@ def newsletter(issue, date):
 	email_html = email_html.replace("{{primary_color}}", primary_color)
 	email_html = email_html.replace("{{secondary_color}}", secondary_color)
 	email_html = email_html.replace("{{support_color}}", support_color)
+	email_html = email_html.replace("{{url}}", url)
 
 	#markdown 
 	markdown_text = """
@@ -203,6 +205,16 @@ def generatePosts(file):
 				if post[0] == category[0]:
 					post_list.remove(post)
 		for post in post_list:
+			for category in categories:
+				if post[0] == category[0]:
+					post_list.remove(post)
+		for post in post_list:
+			for category in categories:
+				if post[0] == category[0]:
+					post_list.remove(post)
+		# don't know why but need to loop it to remove all dups
+		category_post_list = [];
+		for post in post_list:
 			category_post_list.append(post)
 		if len(category_post_list) > 0:
 			posts_html = posts_html + '<p style="color:{{primary_color}}; font-size: 24px; font-weight: normal; margin-top: 8px; margin-bottom: 10px">Other</p>'
@@ -218,7 +230,7 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('2', 'June 18, 2015')
+newIssue('3', 'June 25, 2015')
 
 
 
