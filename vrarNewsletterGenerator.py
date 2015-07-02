@@ -36,7 +36,8 @@ def newsletter(issue, date):
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{newsletter_name}} #{{issue}}</title>
+    <title>Top posts in virtual and augmented reality | {{newsletter_name}} #{{issue}}</title>
+    <meta name="description" content="Top posts from every major virtual reality subreddits for the week of {{date}}. Keep up to date with virtual reality and augmented reality by subscribing to VR/AR Weekly.">
 </head>
 <body>
 <!-- INCLOSING TABLE AND DIV -->
@@ -67,9 +68,8 @@ def newsletter(issue, date):
 
 		<!-- FOOTER -->
 <tr><td bgcolor="#f4f4f4" style="font-family: verdana, helvetica, arial, sans-serif; text-align: left; padding-top: 12px; padding-left: 12px; padding-right: 12px; padding-bottom: 12px" class="noarchive">
-	<p style="line-height: 15px; font-size: 11px; margin-top: 0">A side project of <a target="_blank" href="http://twitter.com/tonysheng" style="color: #0088cc">@tonysheng</a>.
-	<p style="font-size: 11px; line-height: 15px">VR/AR Weekly, 301 King Street, San Francisco, CA 94158</p>
-	<p style="font-size: 11px; line-height: 15px">Forwarded this email? Subscribe to the newsletter <a target="_blank" href="http://www.vrarweekly.com" style="color: #0088cc">here.</a></p>
+	<p style="line-height: 15px; font-size: 14px; margin-top: 0">A side project of <a target="_blank" href="http://twitter.com/tonysheng" style="color: #0088cc">@tonysheng</a>.
+	<p style="font-size: 14px; line-height: 15px">Forwarded this email? Subscribe to the newsletter <a target="_blank" href="http://www.vrarweekly.com" style="color: #0088cc">here</a>.</p>
 </td></tr>
 </table>
 </td></tr></table></div>
@@ -230,7 +230,7 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('3', 'June 25, 2015')
+newIssue('4', 'July 2, 2015')
 
 
 
