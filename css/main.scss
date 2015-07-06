@@ -112,7 +112,10 @@ input[submit] {
 #mc_embed_signup {
 	font: inherit;
 	padding: 2rem;
-	background-color: $primary-color;
+	background-image: $primary-color;
+	background-image:linear-gradient(
+      #FF5B37, $primary-color
+    );
 }
 
 #mc_embed_signup p{

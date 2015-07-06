@@ -88,12 +88,11 @@ def newsletter(issue, date):
 	#markdown 
 	markdown_text = """
 #{{newsletter_name}}
-Issue #{{issue}} // {{date}}
-[Subscribe to get every issue in your inbox](http://www.vrarweekly.com)
+Issue #{{issue}} // {{date}} // [Subscribe to get every issue in your inbox](http://www.vrarweekly.com)
+
+VR/AR Weekly is a collection of the top posts from nine virtual reality subreddits.
 
 {{markdown_content}}
-
-This is an experiment that will improve every week. Reply to this thread to share feedback. 
 """
 	markdown_text = markdown_text.replace("{{issue}}", issue)
 	markdown_text = markdown_text.replace("{{date}}", date)
@@ -147,7 +146,11 @@ def generatePosts(file):
 		post_markdown = """
 **[{{post_title}}]({{post_url}})**
 {{post_domain}} | [comments ({{post_comments}})]({{post_permalink}})
+
 {{post_description}}
+
+&nbsp;
+
 """
 
 		post_html = post_html.replace("{{post_url}}", post_url.decode("utf-8"))

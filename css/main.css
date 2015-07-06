@@ -87,7 +87,8 @@ input[submit] {
 #mc_embed_signup {
   font: inherit;
   padding: 2rem;
-  background-color: #455A64; }
+  background-image: #455A64;
+  background-image: linear-gradient(#FF5B37, #455A64); }
 
 #mc_embed_signup p {
   margin: 0.5rem 0 0 0;
