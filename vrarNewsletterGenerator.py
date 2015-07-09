@@ -7,6 +7,8 @@ import json
 import codecs
 
 # config
+## issue specific
+reddit_url = "https://www.reddit.com/r/virtualreality/comments/3concv/what_happened_this_week_in_vr_vrar_weekly_issue_5/"
 ## name
 newsletter_name = "VR/AR Weekly"
 url = "http://www.vrarweekly.com" # include http://
@@ -16,9 +18,10 @@ secondary_color = "#303F9F" # links
 support_color = "#607D8B"# domains 
 ## categories
 categories = [
-["Oculus", ["Oculus", "Palmer", "Rift"]],
+["Oculus", ["Oculus", "Palmer", "Rift", "DK2", "Carmack"]],
 ["Valve", ["Valve", "Steam", "Vive", "HTC", "Lighthouse"]],
 ["Sony", ["Sony", "Morpheus"]],
+["Samsung", ["Gear", "GearVR", "Samsung"]],
 ["StarVR", ["StarVR"]],
 ["Google", ["Google", "YouTube", "Cardboard", "Android", "Android"]],
 ["Microsoft", ["Microsoft", "Xbox", "Minecraft", "Hololens"]]
@@ -45,7 +48,7 @@ def newsletter(issue, date):
 
 <!-- EMAIL TEXT AND AND READ ON WEB LINK -->
 	<table border="0" width="660" cellpadding="0" cellspacing="0" class="container noarchive" style="border-collapse: collapse;"><tr><td style="padding-top: 6px; padding-bottom: 6px; font-size: 12px; text-align: center; color: #555">
-		<a target="_blank" href="{{url}}issue/{{issue}}" style="color: {{secondary_color}}">Read this e-mail on the Web</a>
+		<a target="_blank" href="{{url}}/{{issue}}.html" style="color: {{secondary_color}}">Read this e-mail on the Web</a>
 	</td></tr></table>
 
 	<!-- BODY INCLOSING TABLE -->
@@ -59,6 +62,11 @@ def newsletter(issue, date):
 			</span></td></tr></table>
 		</td></tr></table></td></tr>
 
+		<!-- DISCUSS ON REDDIT -->
+		<tr><td bgcolor="#f4f4f4" style="font-family: verdana, helvetica, arial, sans-serif; text-align: left; padding-top: 12px; padding-left: 12px; padding-right: 12px; padding-bottom: 12px;" class="noarchive">
+			<p style="line-height: 15px; font-size: 14px; margin-top: 12px">Discuss this week's top posts <a target="_blank" href="{{reddit_url}}" style="color: #0088cc">on reddit</a>.
+		</td></tr>
+
 		<!-- POSTS CONTAINER -->
 		<tr><td style="padding: 16px 12px 12px 12px" align="left">
 
@@ -68,7 +76,7 @@ def newsletter(issue, date):
 
 		<!-- FOOTER -->
 <tr><td bgcolor="#f4f4f4" style="font-family: verdana, helvetica, arial, sans-serif; text-align: left; padding-top: 12px; padding-left: 12px; padding-right: 12px; padding-bottom: 12px" class="noarchive">
-	<p style="line-height: 15px; font-size: 14px; margin-top: 0">A side project of <a target="_blank" href="http://twitter.com/tonysheng" style="color: #0088cc">@tonysheng</a>.
+	<p style="line-height: 15px; font-size: 14px; margin-top: 12px">A side project of <a target="_blank" href="http://twitter.com/tonysheng" style="color: #0088cc">@tonysheng</a>.
 	<p style="font-size: 14px; line-height: 15px">Forwarded this email? Subscribe to the newsletter <a target="_blank" href="http://www.vrarweekly.com" style="color: #0088cc">here</a>.</p>
 </td></tr>
 </table>
@@ -84,6 +92,7 @@ def newsletter(issue, date):
 	email_html = email_html.replace("{{secondary_color}}", secondary_color)
 	email_html = email_html.replace("{{support_color}}", support_color)
 	email_html = email_html.replace("{{url}}", url)
+	email_html = email_html.replace("{{reddit_url}}", reddit_url)
 
 	#markdown 
 	markdown_text = """
@@ -93,6 +102,10 @@ Issue #{{issue}} // {{date}} // [Subscribe to get every issue in your inbox](htt
 VR/AR Weekly is a collection of the top posts from nine virtual reality subreddits.
 
 {{markdown_content}}
+
+&nbsp;
+
+*Send me some feedback by responding to the thread. If you want to subscribe by email, [click here](http://www.vrarweekly.com)*
 """
 	markdown_text = markdown_text.replace("{{issue}}", issue)
 	markdown_text = markdown_text.replace("{{date}}", date)
@@ -185,7 +198,8 @@ def generatePosts(file):
 				for category_string in category[1]:
 					if (post[0] in category_string or category_string in post[0]):
 						category_post_list.append([post[0], post[1], post[2], post[3]])
-						post[0] = category[0] # effectively removes post from list
+						post[0] = category[0]
+						# effectively removes post from list
 			if len(category_post_list) != 0:
 				posts_html = posts_html + '<p style="color:{{primary_color}}; font-size: 24px; font-weight: normal; margin-top: 8px; margin-bottom: 10px">{{category_title}}</p>'
 				posts_html = posts_html.replace("{{category_title}}", category[0])
@@ -233,7 +247,7 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('4', 'July 2, 2015')
+newIssue('5', 'July 9, 2015')
 
 
 
