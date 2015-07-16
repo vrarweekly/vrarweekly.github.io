@@ -8,7 +8,7 @@ import codecs
 
 # config
 ## issue specific
-reddit_url = "https://www.reddit.com/r/virtualreality/comments/3concv/what_happened_this_week_in_vr_vrar_weekly_issue_5/"
+reddit_url = "https://www.reddit.com/r/oculus/comments/3diatd/what_happened_this_week_in_vr_vrar_weekly_issue_6/"
 ## name
 newsletter_name = "VR/AR Weekly"
 url = "http://www.vrarweekly.com" # include http://
@@ -24,7 +24,7 @@ categories = [
 ["Samsung", ["Gear", "GearVR", "Samsung"]],
 ["StarVR", ["StarVR"]],
 ["Google", ["Google", "YouTube", "Cardboard", "Android", "Android"]],
-["Microsoft", ["Microsoft", "Xbox", "Minecraft", "Hololens"]]
+["Microsoft", ["Microsoft", "Xbox", "Minecraft", "Hololens", "HoloLens"]]
 ] # Leave empty if you don't want categories. If you have categories, add them to the list in the following format: [name of category, [flair tag 1, flair tag 2, flair tag3, ...]]. It will search each flair tag and if there's a match, assign it to the category.
 category_search_method = "title" # choose title or flair depending
 
@@ -247,7 +247,8 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('5', 'July 9, 2015')
+newIssue('6', 'July 16, 2015')
+
 
 
 
