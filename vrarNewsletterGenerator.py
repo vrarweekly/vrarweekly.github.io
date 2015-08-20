@@ -8,7 +8,7 @@ import codecs
 
 # config
 ## issue specific
-reddit_url = "https://www.reddit.com/r/oculus/comments/3f5z5t/what_happened_this_week_in_virtual_reality_vrar/"
+reddit_url = "https://www.reddit.com/r/oculus/comments/3hqeui/what_happened_this_week_in_virtual_reality_vrar/"
 ## name
 newsletter_name = "VR/AR Weekly"
 url = "http://www.vrarweekly.com" # include http://
@@ -231,6 +231,8 @@ def generatePosts(file):
 			for category in categories:
 				if post[0] == category[0]:
 					post_list.remove(post)
+		
+		
 
 		# don't know why but need to loop it to remove all dups
 		category_post_list = [];
@@ -250,7 +252,7 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('8', 'July 30, 2015')
+newIssue('10', 'Aug 20, 2015')
 
 
 
