@@ -8,7 +8,7 @@ import codecs
 
 # config
 ## issue specific
-reddit_url = "https://www.reddit.com/r/oculus/comments/3hqeui/what_happened_this_week_in_virtual_reality_vrar/"
+reddit_url = "https://www.reddit.com/r/oculus/comments/3ilqkr/what_happened_this_week_in_vr_vrar_weekly_issue_11/"
 ## name
 newsletter_name = "VR/AR Weekly"
 url = "http://www.vrarweekly.com" # include http://
@@ -252,7 +252,7 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('10', 'Aug 20, 2015')
+newIssue('11', 'Aug 27, 2015')
 
 
 
