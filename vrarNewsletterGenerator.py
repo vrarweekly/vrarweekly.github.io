@@ -8,7 +8,7 @@ import codecs
 
 # config
 ## issue specific
-reddit_url = "https://www.reddit.com/r/oculus/comments/3ilqkr/what_happened_this_week_in_vr_vrar_weekly_issue_11/"
+reddit_url = "https://www.reddit.com/r/oculus/comments/3ji3yx/a_roundup_of_what_happened_this_week_in_vr_vrar/"
 ## name
 newsletter_name = "VR/AR Weekly"
 url = "http://www.vrarweekly.com" # include http://
@@ -199,9 +199,12 @@ def generatePosts(file):
 			for post in post_list:
 				for category_string in category[1]:
 					if (post[0] in category_string or category_string in post[0]):
-						category_post_list.append([post[0], post[1], post[2], post[3]])
-						post[0] = category[0]
-						# effectively removes post from list
+						if post[3] != "added":
+							print post[0]
+							category_post_list.append([post[0], post[1], post[2], post[3]])
+							post[0] = category[0]
+							post[3] = "added"
+							# effectively removes post from list
 			if len(category_post_list) != 0:
 				posts_html = posts_html + '<p style="color:{{primary_color}}; font-size: 24px; font-weight: normal; margin-top: 8px; margin-bottom: 10px">{{category_title}}</p>'
 				posts_html = posts_html.replace("{{category_title}}", category[0])
@@ -252,7 +255,7 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('11', 'Aug 27, 2015')
+newIssue('12', 'Sep 3, 2015')
 
 
 
