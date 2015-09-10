@@ -8,7 +8,7 @@ import codecs
 
 # config
 ## issue specific
-reddit_url = "https://www.reddit.com/r/oculus/comments/3ji3yx/a_roundup_of_what_happened_this_week_in_vr_vrar/"
+reddit_url = "https://www.reddit.com/r/oculus/comments/3kf0aa/top_vr_discussions_from_last_week_vrar_weekly/"
 ## name
 newsletter_name = "VR/AR Weekly"
 url = "http://www.vrarweekly.com" # include http://
@@ -18,7 +18,7 @@ secondary_color = "#303F9F" # links
 support_color = "#607D8B"# domains 
 ## categories
 categories = [
-["Oculus", ["Oculus", "Palmer", "Rift", "DK2", "Carmack"]],
+["Oculus", ["Oculus", "Palmer", "Rift", "DK2", "Carmack", "share.oculus"]],
 ["HTC / Valve", ["Valve", "Steam", "Vive", "HTC", "Lighthouse"]],
 ["Sony", ["Sony", "Morpheus"]],
 ["Samsung", ["Gear", "GearVR", "Samsung"]],
@@ -255,7 +255,7 @@ def generatePosts(file):
 
 	return (posts_html, posts_markdown)
 
-newIssue('12', 'Sep 3, 2015')
+newIssue('13', 'Sep 10, 2015')
 
 
 
